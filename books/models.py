@@ -9,6 +9,10 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    cover = models.ImageField(upload_to="covers/", blank=True)
+    extrafile = models.FileField(
+        upload_to="files/", blank=True
+    )  # just for demo of FileField
 
     def __str__(self):
         return self.title
@@ -17,7 +21,7 @@ class Book(models.Model):
         return reverse("book_detail", args=[str(self.id)])
 
 
-class Review(models.Model):  
+class Review(models.Model):
     book = models.ForeignKey(
         Book,
         on_delete=models.CASCADE,

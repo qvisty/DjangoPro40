@@ -101,7 +101,7 @@ DATABASES = {
     #     "ENGINE": "django.db.backends.sqlite3",
     #     "NAME": "mydatabase",
     # }
-     "default": {
+    "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": env("NAME"),  # User & Default database setting fra siden
         "USER": env("USER"),  # User & Default database setting fra siden
@@ -110,7 +110,6 @@ DATABASES = {
         "PORT": 5432,
     }
 }
-
 
 
 # Password validation
@@ -151,6 +150,12 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+
+# Media files
+# MEDIA_ROOT is the absolute file system path to the directory for user-uploaded files
+# MEDIA_URL is the URL we can use in our templates for the files
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
