@@ -97,11 +97,20 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # default="postgres://postgres@db/postgres")
 # }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase",
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": "mydatabase",
+    # }
+     "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("NAME"),  # User & Default database setting fra siden
+        "USER": env("USER"),  # User & Default database setting fra siden
+        "PASSWORD": env("DB_PASSWORD"),  # password fra siden
+        "HOST": env("DATABASE_HOST"),  # første del af Server eller en del af url feltet
+        "PORT": 5432,
     }
 }
+
 
 
 # Password validation
