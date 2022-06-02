@@ -1,8 +1,7 @@
 # DjangoPro40
  My version of Django for Pros 4.0
 
-chapter 14 done
-
+chapter 15
 
 + added elephantsql Postgres
 https://www.elephantsql.com/
