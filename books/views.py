@@ -8,7 +8,6 @@ from .models import Book
 class BookListView(LoginRequiredMixin, ListView):
     # could also use: UserPassesTestMixin
     # https://docs.djangoproject.com/en/4.0/topics/auth/default/#django.contrib.auth.mixins.UserPassesTestMixin
-
     model = Book
     context_object_name = "book_list"
     template_name = "books/book_list.html"
